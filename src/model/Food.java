@@ -1,5 +1,12 @@
 package model;
+import model.Animal;
 
 public class Food {
+    private String name; 
+    private String foodSpecies; 
     
+    public Food(String name, String foodSpecies){
+        this.name = name; 
+        this.foodSpecies = foodSpecies;
+    }
 }
