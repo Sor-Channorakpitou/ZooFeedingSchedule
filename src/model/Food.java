@@ -9,4 +9,12 @@ public class Food {
         this.name = name; 
         this.foodSpecies = foodSpecies;
     }
+
+    public String getName(){ 
+        return name; 
+    }
+
+    public String getFoodSpecies(){
+        return foodSpecies; 
+    }
 }

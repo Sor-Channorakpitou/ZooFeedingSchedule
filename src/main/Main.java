@@ -1,7 +1,8 @@
 package main;
 
 import java.util.Scanner;
-import service.Service;
+import service.Service; 
+import model.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,14 +11,14 @@ public class Main {
         System.out.println("|  ZOO FEEDING SCHEDULE SYSTEM  |");
         System.out.println("=================================\n");
 
-        Service ZooServices = new Service();
-
+        Service zooService = new Service();
         Scanner options = new Scanner(System.in); 
         int choice;
         boolean exit = false; 
 
         while(!exit) {
 
+            System.out.println("=================");
             System.out.println("1. Manage animal");
             System.out.println("2. View all animals");
             System.out.println("3. Set feeding schedule");
@@ -32,16 +33,16 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    ZooServices.ManageAnimal();
+                    zooService.ManageAnimal();
                     break;
                 case 2:
-                    ZooServices.ViewAllAnimals();
+                    zooService.ViewAllAnimals();
                     break;
                 case 3:
-                    ZooServices.SetFeedingSchedule();
+                    zooService.SetFeedingSchedule();
                     break;
                 case 4:
-                    ZooServices.ViewFeedingSchedule();
+                    zooService.ViewFeedingSchedule();
                     break;
                 case 5:
                     System.out.println("Exiting system...");

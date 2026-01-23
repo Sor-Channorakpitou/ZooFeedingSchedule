@@ -9,6 +9,18 @@ public class Animal {
         this.name = name;
         this.species = species; 
         this.favoriteFood = favoriteFood;   
+    } 
+
+    public String getName(){
+        return name;
+    }
+
+    public String getSpecies(){
+        return species; 
+    }
+
+    public Food getFood(){
+        return favoriteFood;
     }
     
 }
