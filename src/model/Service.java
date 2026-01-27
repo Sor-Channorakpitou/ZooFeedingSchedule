@@ -1,9 +1,8 @@
-package service;
+package model;
 
 import java.util.List;
 import java.util.Scanner;
-import model.Animal;
-import model.Habitat;
+
 import util.ZooConfig;
 
 
