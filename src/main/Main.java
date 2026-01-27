@@ -2,14 +2,9 @@ package main;
 
 import java.util.Scanner;
 import service.Service; 
-import model.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Banner
-        System.out.println("\n=================================");
-        System.out.println("|  ZOO FEEDING SCHEDULE SYSTEM  |");
-        System.out.println("=================================\n");
 
         Service zooService = new Service();
         Scanner options = new Scanner(System.in); 
@@ -18,13 +13,15 @@ public class Main {
 
         while(!exit) {
 
-            System.out.println("=================");
-            System.out.println("1. Manage animal");
-            System.out.println("2. View all animals");
-            System.out.println("3. Set feeding schedule");
-            System.out.println("4. View all feeding schedule");
-            System.out.println("5. Exit");
-            System.out.println("=================");
+            System.out.println("\n=================================");
+            System.out.println("|  ZOO FEEDING SCHEDULE SYSTEM  |");
+            System.out.println("=================================");
+            System.out.printf("| %-29s |\n", "1. Manage animal");
+            System.out.printf("| %-29s |\n", "2. View all animals");
+            System.out.printf("| %-29s |\n", "3. Set feeding schedule");
+            System.out.printf("| %-29s |\n", "4. View all feeding schedule");
+            System.out.printf("| %-29s |\n", "5. Exit");
+            System.out.println("=================================");
             System.out.print("Select option: ");
             
 

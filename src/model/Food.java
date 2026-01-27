@@ -1,9 +1,9 @@
 package model;
-import model.Animal;
 
 public class Food {
     private String name; 
     private String foodSpecies; 
+
     
     public Food(String name, String foodSpecies){
         this.name = name; 
@@ -17,4 +17,5 @@ public class Food {
     public String getFoodSpecies(){
         return foodSpecies; 
     }
+
 }
