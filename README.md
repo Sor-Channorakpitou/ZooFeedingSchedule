@@ -16,7 +16,8 @@ ZooFeedingSchedule/
 │   │
 │   ├── model/                           
 │   │   ├── Animal.java                  
-│   │   ├── Service.java                 
+│   │   ├── Service.java
+│   │   ├── Habitat.java                
 │   │   └── Food.java                  
 │   │
 │   └── util/                           
