@@ -1,47 +1,37 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] agrs) {
-        Scanner opt = new Scanner(System.in);
-        int choice;
-        boolean exit = false;
 
-        while (!exit) {
-            System.out.println("\n=================================");
-            System.out.println("|  ZOO FEEDING SCHEDULE SYSTEM  |");
-            System.out.println("=================================");
-            System.out.printf("| %-29s |\n", "1. Manage animal");
-            System.out.printf("| %-29s |\n", "2. View all animals");
-            System.out.printf("| %-29s |\n", "3. Set feeding schedule");
-            System.out.printf("| %-29s |\n", "4. View all feeding schedule");
-            System.out.printf("| %-29s |\n", "5. Exit");
-            System.out.println("=================================");
-            System.out.print("Select option: ");
+        // Copy a primitive, modify the copy, original remains unchanged
+        int Id = ZooConfig.animals[1].id;
+        int copyId = Id;
+        copyId = 23;
+        System.out.println("The copy value after modify: " + copyId);
+        System.out.println("The original id after modify: " + Id);
 
-            choice = opt.nextInt();
-            opt.nextLine();
+        // Two variables reference the same object; change is visible everywhere
+        Animal testAnimal = ZooConfig.animals[2];
+        Animal clonedAnimal = testAnimal;
+        System.out.println("The initial ID of original animal: " + testAnimal.id);
+        System.out.println("The initial ID of clone animal: " + clonedAnimal.id);
+        clonedAnimal.id = 3;
+        System.out.println("The update ID of original animal: " + testAnimal.id);
+        System.out.println("The update ID of clone animal: " + clonedAnimal.id);
 
-            switch (choice) {
-                case 1:
-                    Service.ManageAnimal();
-                    break;
-                case 2:
-                    Service.ViewAllAnimals();
-                    break;
-                case 3:
-                    Service.SetFeedingSchedule();
-                    break;
-                case 4:
-                    Service.ViewFeedingSchedule();
-                    break;
-                case 5:
-                    System.out.println("Exiting system...");
-                    exit = true;
-                    break;
-                default:
-                    System.out.println("Invalid choice!");
-            }
-        }
-        opt.close();
+//        // Objects inside arrays reflect later modifications
+        Animal[] animals = new Animal[1];
+        animals[0] = ZooConfig.animals[1];
+        System.out.println("The initial ID of original animals: " + animals[0].id);
+        ZooConfig.animals[1].id = 33;  // Object change
+        System.out.println("The update ID of original animals: " + animals[0].id);
+
+        // Stored snapshot values do not change after the original object changes
+        Animal animal = ZooConfig.animals[1];
+        int snapShotId = animal.id;
+        System.out.println("The original ID of animal: " + animal.id);
+
+        animal.id = 333;
+        System.out.println("The snapshotID of the animal after modification the original object: " + snapShotId);
+        System.out.println("The originalID of the animal: " + animal.id);
+
     }
 }
