@@ -77,4 +77,6 @@ class ZooConfig {
         addAnimal(new Animal(25, "S1", 9, OC001, "Shark"));
         addAnimal(new Animal(17, "S2", 10, OC001, "Shark"));
     }
+
+
 }
