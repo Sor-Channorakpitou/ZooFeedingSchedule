@@ -31,3 +31,5 @@ bin/
 
 .idea
 ZooProject.iml
+
+*.class
