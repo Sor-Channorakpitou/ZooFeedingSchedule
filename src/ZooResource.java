@@ -96,16 +96,16 @@ class ZooResource {
         addAnimal(new Animal(17, "S2", 10, OC001, "Shark"));
 
         // ===== STAFF =====
-        Staff alice = new Staff(1, "Alice", "Keeper-Forest");
-        Staff john = new Staff(2, "John", "Keeper-Savanna");
-        Staff dara = new Staff(3, "Dara", "Keeper-Jungle");
-        Staff mary = new Staff(4, "Mary", "Keeper-Ocean");
-        Staff bob   = new Staff(5, "Bob", "Customer Service");
-        addStaff(alice);
-        addStaff(john);
-        addStaff(dara);
-        addStaff(mary);
-        addStaff(bob);
+        // Staff alice = new Staff(1, "Alice", "Keeper-Forest");
+        // Staff john = new Staff(2, "John", "Keeper-Savanna");
+        // Staff dara = new Staff(3, "Dara", "Keeper-Jungle");
+        // Staff mary = new Staff(4, "Mary", "Keeper-Ocean");
+        // Staff bob   = new Staff(5, "Bob", "Customer Service");
+        // addStaff(alice);
+        // addStaff(john);
+        // addStaff(dara);
+        // addStaff(mary);
+        // addStaff(bob);
     }
 
 
