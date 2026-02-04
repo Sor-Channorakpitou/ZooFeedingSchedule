@@ -13,4 +13,12 @@ class Food {
         this.stock = stock;
         this.expiryDate = expiryDate;
     }
-}
+
+    @Override
+    public String toString() {
+        return "Food [id=" + id + ", name=" + name + ", type=" + type + ", inStock=" + inStock + ", stock=" + stock
+                + ", expiryDate=" + expiryDate + "]";
+    }
+    
+
+} 

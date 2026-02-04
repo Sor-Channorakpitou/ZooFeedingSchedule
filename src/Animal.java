@@ -12,4 +12,10 @@ class Animal {
         this.habitat = habitat;
         this.species = species;
     }
+
+    @Override
+    public String toString() {
+        return "Animal [id=" + id + ", name=" + name + ", age=" + age + ", habitat=" + habitat + ", species=" + species
+                + "]";
+    }
 }

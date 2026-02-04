@@ -1,4 +1,4 @@
-class ZooConfig {
+class ZooResource {
 
     // ===== ARRAYS + PRIMITIVE COUNTERS =====
     static Animal[] animals = new Animal[100];
@@ -9,6 +9,9 @@ class ZooConfig {
 
     static Habitat[] habitats = new Habitat[30];
     static int habitatCount = 0;
+
+    static Staff[] staffs = new Staff[20];
+    static int staffCount = 0;
 
     // ===== HELPER METHODS =====
     static void addAnimal(Animal a) {
@@ -22,10 +25,18 @@ class ZooConfig {
     static void addHabitat(Habitat h) {
         habitats[habitatCount++] = h;
     }
+    
+    static void addStaff(Staff s) {
+        staffs[staffCount++] = s;
+    }
+
+    static void setSchedule(Schedule sch) {
+        // Implementation not shown
+
+    }
 
     static {
         // ===== FOODS =====
-        Food bamboo   = new Food(1, "Bamboo", "Plant", 100.0, "2026-12-31");
         Food lettuce  = new Food(2, "Lettuce", "Plant", 50.0, "2026-07-15");
         Food carrot   = new Food(3, "Carrot", "Plant", 60.0, "2026-06-20");
         Food spinach  = new Food(4, "Spinach", "Plant", 40.0, "2026-05-30");
@@ -41,10 +52,16 @@ class ZooConfig {
         Food corn     = new Food(14, "Corn", "Grain", 60.0, "2026-09-30");
         Food oats     = new Food(15, "Oats", "Grain", 40.0, "2026-08-20");
 
-        addFood(bamboo); addFood(lettuce); addFood(carrot); addFood(spinach);
+        addFood(new Food(1, "Bamboo", "Plant", 100.0, "2026-12-31")); 
+        addFood(lettuce); addFood(carrot); addFood(spinach);
         addFood(banana); addFood(apple); addFood(mango); addFood(orange);
         addFood(steak); addFood(chicken); addFood(fish);
         addFood(peanuts); addFood(almonds); addFood(corn); addFood(oats);
+
+        addFood(new Food(16, "KOK", "Grain", 20.0, "2026-08-30"));
+        
+        addFood(new Food(17, "BakSa", "Grain", 10.0, "2026-07-01"));
+        addFood(new Food(16, "KOK", "Grain", 20.0, "2026-08-30"));
 
         // ===== FEEDING TIMES =====
         String[] forestTimes  = {"08:00", "12:30", "17:00"};
@@ -52,9 +69,10 @@ class ZooConfig {
         String[] savannaTimes = {"09:00", "13:00", "18:00"};
         String[] oceanTimes   = {"07:00", "11:30", "19:00"};
 
-        // ===== HABITATS + ANIMALS =====
+        // ===== HABITATS + ANIMALS ===== 
 
-        Habitat FR001 = new Habitat("FR001", "Panda", bamboo.stock, forestTimes, new Animal[5], bamboo);
+
+        Habitat FR001 = new Habitat("FR001", "Panda", foods[0].stock, forestTimes, new Animal[5], foods[0]);
         addHabitat(FR001);
         addAnimal(new Animal(12, "P1", 6, FR001, "Panda"));
         addAnimal(new Animal(31, "P2", 5, FR001, "Panda"));
@@ -76,5 +94,17 @@ class ZooConfig {
         addHabitat(OC001);
         addAnimal(new Animal(25, "S1", 9, OC001, "Shark"));
         addAnimal(new Animal(17, "S2", 10, OC001, "Shark"));
+
+        // ===== STAFF =====
+        Staff alice = new Staff(1, "Alice", "Keeper-Forest");
+        Staff john = new Staff(2, "John", "Keeper-Savanna");
+        Staff dara = new Staff(3, "Dara", "Keeper-Jungle");
+        Staff mary = new Staff(4, "Mary", "Keeper-Ocean");
+        Staff bob   = new Staff(5, "Bob", "Customer Service");
+        addStaff(alice);
+        addStaff(john);
+        addStaff(dara);
+        addStaff(mary);
+        addStaff(bob);
     }
 }
